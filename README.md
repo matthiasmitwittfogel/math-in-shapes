@@ -17,8 +17,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ### 2. Clone & Setup
 
 ```bash
-git clone <your-repo-url>
-cd mastermathematics
+git clone https://github.com/matthiasmitwittfogel/math-in-shapes.git
+cd math-in-shapes
 uv sync
 ```
 
@@ -94,3 +94,19 @@ This repo contains the ManimCE source code for math animations published on the 
 | [20231104_cube_sum](videos%2F20231104_cube_sum) | [Video](https://www.youtube.com/watch?v=r5itGj29gh8&t=24s) |
 | [20231107_china_flag](videos%2F20231107_china_flag) | [Video](https://www.youtube.com/watch?v=G3FpbKVKlCg) |
 | [20240416_bubble_sort](videos%2F20240416_bubble_sort) | [Video](https://www.youtube.com/watch?v=YUuUKpOJqnE) |
+
+---
+
+## Covers
+
+YouTube thumbnail covers live in [covers/](covers) and are generated with Manim by the scripts in [tools/](tools):
+
+```bash
+# Rebuild all covers (one .jpg per scene, listed in tools/build_covers.py)
+uv run python tools/build_covers.py
+
+# Build the standalone "geometric series from 1/6" cover
+uv run python tools/build_sixths_cover.py
+```
+
+Cover builds write intermediate TeX/manifest files to `work/` (git-ignored) and logs to `*.log` (git-ignored).
